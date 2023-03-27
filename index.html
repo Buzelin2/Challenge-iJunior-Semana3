@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="script.js"></script>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+<body>
+
+  <div class="tudo">
+    <div class="left">
+     <div class="cartoes">
+        <div class="cartao1">
+          <img class = "img_cartao1"src="images\bg-card-front.png">
+          <img class = "favicon" src="images\card-logo.svg">
+          <p id="cartaonum" class="numero_cartao">0000 0000 0000 0000</p>
+          <div class="cartao_info">
+            <p id="cartaonome" class="nome_cartao">JANE APPLESEED</p>
+            <p id="cartaoval" class="val_cartao">00/00</p>
+          </div>
+        </div>
+        <div class="cartao2">
+          <img class = "img_cartao2" src= "images\bg-card-back.png">
+          <p id="cartaocvv" class="num_seg">000</p>
+        </div>
+      </div>
+      <div class="fundo">
+        <img class = "img_fundo" src="images\bg-main-desktop.png">
+      </div>
+    </div>
+    <div id = "rightid" class="right">
+      <div class="forms">
+        <form id="form" onsubmit="return false" action="/">
+            <div class="input-control">
+              <p class = "textos">CARDHOLDER NAME</p>
+                <input class="form1 inputs required" id="nomee"  type="text"  maxlength="40" placeholder="e.g. Jane Appleseed" oninput="nameValidate()">
+                <span class="span">Nome invalido</span>
+            </div>
+            <div class="input-control">
+              <p class = "textos">CARD NUMBER</p>
+              <input class="form2 inputs required" id="cardd"  type="text"   maxlength="19" placeholder="e.g. 1234 5678 9123 0000" oninput="cardValidate()">
+              <span class="span">Número do cartão invalido</span>
+            </div>
+            <div class="input-control">
+              <div class="textos">
+                <p class = "textos">EXP. DATE (MM/YY)</p>
+                <p class = "textos" class="texto2">CVC</p>
+              </div>
+              <div class="forms_mult">
+                  <div class="form_span">
+                    <input class = "form3 inputs required" id="mm"  type="text"   maxlength="2" placeholder="MM" oninput="monthValidate()">
+                    <span class="span spanform">Mês invalido</span>
+                  </div>
+                  <div class="form_span">
+                    <input class = "form4 inputs required" id="yy" c type="text"   maxlength="2" placeholder="YY" oninput="yearValidate()">
+                    <span class="span spanform1">Ano invalido</span>
+                  </div>
+                  <div class="form_span">
+                    <input class = "form5 inputs required" id="cvcc"  type="text"   maxlength="3" placeholder="e.g. 123" oninput="cvcValidate()">
+                    <span class="span spanform2">CVV invalido</span>
+                  </div>  
+            </div>
+            <div>
+                    <button id="botao" type = "submit" class="button">Confirm</button>
+            </div>
+          </form>
+        </div>
+        <div id="concluido">
+          <form onsubmit="funcao()">
+            <img class = "img_concluido" src="images\icon-complete.svg">
+            <p class="thank">THANK YOU</p>
+            <p class="thank2">We've added your card details</p>
+            <button class="concluir" type="submit">Continue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
